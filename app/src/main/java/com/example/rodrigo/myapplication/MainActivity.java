@@ -24,22 +24,21 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         String[] dados = {
-                "Mon 6/23 - Sunny - 31/17",
-                "Tue 6/24 - Foggy - 21/8",
-                "Wed 6/25 - Cloudy - 22/17",
-                "Thurs 6/26 - Rainy - 18/11",
-                "Fri 6/27 - Foggy - 21/10",
-                "Sat 6/28 - TRAPPED IN WEATHERSTATION - 23/18",
-                "Sun 6/29 - Sunny - 20/7"
+                "Bolo - 45min",
+                "Pizza - 30min",
+                "Capuccino - 5min",
+                "Salada - 10min",
+                "Nhoque - 1h",
+                "Vitamina - 10min"
         };
 
-        List<String> previsao = new ArrayList<>(Arrays.asList(dados));
+        List<String> receitas = new ArrayList<>(Arrays.asList(dados));
 
         mAdapter = new ArrayAdapter<>(
                 getApplicationContext(), // Contexto atual
                 R.layout.item_lista, // Nome do ID do layout
                 R.id.item_texto, // ID do TextView a ser preenchido
-                previsao);
+                receitas);
 
         ListView listView = (ListView) findViewById(R.id.lista_principal);
         listView.setAdapter(mAdapter);
