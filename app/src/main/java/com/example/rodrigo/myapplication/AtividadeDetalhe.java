@@ -1,9 +1,11 @@
 package com.example.rodrigo.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 @SuppressWarnings("deprecation")
@@ -13,6 +15,14 @@ public class AtividadeDetalhe extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atividade_detalhe);
+
+        Intent intent = getIntent();
+        String detailText = intent.getStringExtra(Intent.EXTRA_TEXT);
+
+        if (intent != null && intent.hasExtra(Intent.EXTRA_TEXT)) {
+            TextView detailTextView = (TextView) findViewById(R.id.detalhe_item_texto);
+            detailTextView.setText(detailText);
+        }
     }
 
     @Override
