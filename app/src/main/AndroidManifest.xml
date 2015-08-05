@@ -19,7 +19,15 @@
         <activity
             android:name=".AtividadeDetalhe"
             android:label="@string/title_activity_atividade_detalhe"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.rodrigo.myapplication.MainActivity" />
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="@string/title_activity_settings" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.rodrigo.myapplication.MainActivity" />
