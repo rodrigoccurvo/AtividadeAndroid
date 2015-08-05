@@ -1,7 +1,9 @@
 package com.example.rodrigo.myapplication;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,8 +21,15 @@ public class AtividadeDetalhe extends ActionBarActivity {
         Intent intent = getIntent();
         String detailText = intent.getStringExtra(Intent.EXTRA_TEXT);
 
-        if (intent != null && intent.hasExtra(Intent.EXTRA_TEXT)) {
+        if (intent.hasExtra(Intent.EXTRA_TEXT)) {
             TextView detailTextView = (TextView) findViewById(R.id.detalhe_item_texto);
+
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+            String nome_vovo = prefs.getString(getString(R.string.conf_nome_vovo_chave),
+                    getString(R.string.conf_nome_vovo_padrao));
+
+            detailText = "Vovó " + nome_vovo + " faz " + detailText;
+
             detailTextView.setText(detailText);
         }
     }
