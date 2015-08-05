@@ -6,17 +6,19 @@ import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 
+@SuppressWarnings("deprecation")
 public class SettingsActivity extends PreferenceActivity
         implements Preference.OnPreferenceChangeListener {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // TODO: Usar layout XML
+
+        addPreferencesFromResource(R.xml.config_principal);
 
         // Para cada opção, associar um OnPreferenceChangeListener para atualizar a interface,
         // para que o texto nas configurações esteja de acordo com o valor atual da opção
-        // TODO: Adicionar opção
+        bindPreferenceSummaryToValue(findPreference(getString(R.string.conf_nome_vovo_chave)));
     }
 
     /**

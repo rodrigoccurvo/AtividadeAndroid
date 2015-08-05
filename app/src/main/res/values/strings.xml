@@ -5,4 +5,8 @@
     <string name="title_activity_settings">Detalhes</string>
     <string name="title_activity_atividade_detalhe">Detalhes</string>
 
+    <string name="conf_nome_vovo">Nome da vovó</string>
+    <string name="conf_nome_vovo_chave">nome</string>
+    <string name="conf_nome_vovo_padrao">Maria</string>
+
 </resources>
